@@ -10,9 +10,7 @@ expressobject.use(cors());
 
 expressobject.use(cors({
    origin: [
-    'http://localhost:3000',
     'http://localhost:5174',
-    'http://127.0.0.1:3000',
     'http://127.0.0.1:5174'
   ],
   credentials: true,
@@ -28,21 +26,7 @@ expressobject.post('/api/users/sign-up', (req, res) => {
   res.json({ ok: true });
 });
 
-/* 
-expressobject.use(
-  (req, resp,next) =>{
-    console.log("expressobject.use is callled....................");
-    next();
-  }
-);
 
-expressobject.use(
-  (req, resp,next) =>{
-    console.log("expressobject.use -2  is callled****************");
-    resp.send("response is sent - 2*****************");
-  }
-);
- */
 expressobject.use("/api/users", restEndpointsObj);
 
 
